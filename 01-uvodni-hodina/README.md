@@ -17,7 +17,7 @@ Po absolvování kurzu byste měli být schopni samostatně navrhnout a implemen
 * **Způsob zakončení:** Zápočet bude udělen za aktivní účast a především za odevzdání a prezentaci projektů.  
 * **Hodnocení:**  
   * **Projekty:** 64 bodů (možnost jednoho velkého nebo více menších).  
-  * **Domácí úkoly:** 36 bodů. Úkoly budou zadávány přes [GitHub repozitář](https://github.com/TomasRacil/Informatika-2-ukoly-2025.git) a odevzdání bude probíhat formou **Pull Requestů**, které budou kontrolovány automatizovanými testy.
+  * **Domácí úkoly:** 36 bodů. Úkoly budou zadávány přes [GitHub repozitář](https://github.com/TomasRacil/Informatika-2-ukoly-2025.git) a odevzdání bude probíhat formou **Pull Requestů**, které budou kontrolovány automatizovanými testy. **Pokud je úkol odevzdán po termínu (nejzazší termín je den zadání následujícího úkolu), student za něj nedostane žádné body, ale stále platí povinnost ho odevzdat.**
   * **Bonusové body:** Za aktivity jako Advent of Code, rychlé a správné odevzdání úkolů a další.  
   * Pro udělení zápočtu je potřeba získat **minimálně 60 bodů**. Body nad 60 se přenáší jako bonus ke zkoušce.  
 * **Zkouška:** 
