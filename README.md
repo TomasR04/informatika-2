@@ -25,8 +25,8 @@ Materiály jsou organizovány do číslovaných adresářů podle témat probír
 
 * [`00-predpoklady/`](./00-predpoklady/): Materiály a příklady k Gitu a Dockeru.
 * [`01-uvodni-hodina/`](./01-uvodni-hodina/README.md): Úvodní informace k předmětu, cíle, hodnocení, harmonogram. **Začněte zde!**
-<!--* [`02-zaklady-cpp/`](./02-zaklady-cpp/README.md): Materiály k základům jazyka C++.
-* [`03-pokrocile-cpp/`](./03-pokrocile-cpp/README.md): Materiály k OOP, šablonám a STL v C++.
+* [`02-zaklady-cpp/`](./02-zaklady-cpp/README.md): Materiály k základům jazyka C++.
+<!--* [`03-pokrocile-cpp/`](./03-pokrocile-cpp/README.md): Materiály k OOP, šablonám a STL v C++.
 * [`04-zaklady-python/`](./04-zaklady-python/README.md): Materiály k základům jazyka Python.
 * [`05-pokrocile-python/`](./05-pokrocile-python/README.md): Materiály k OOP a knihovnám v Pythonu.
 * `motivacni-priklad-knihovna/`: Kompletní kód motivačního příkladu (Python backend, React frontend, PostgreSQL, Docker). -->

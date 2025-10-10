@@ -1,6 +1,6 @@
-# **Výuka C++ a Pythonu \- Úvodní hodina**
+# **Výuka C++ a Pythonu - Úvodní hodina**
 
-## **1\. Cíle předmětu**
+## **1. Cíle předmětu**
 
 V rámci tohoto předmětu se společně ponoříme do světa programování ve dvou silných a široce používaných jazycích: C++ a Python. Cílem je:
 
@@ -12,7 +12,7 @@ V rámci tohoto předmětu se společně ponoříme do světa programování ve 
 
 Po absolvování kurzu byste měli být schopni samostatně navrhnout a implementovat funkční aplikace v obou jazycích.
 
-## **2\. Organizační informace**
+## **2. Organizační informace**
 
 * **Způsob zakončení:** Zápočet bude udělen za aktivní účast a především za odevzdání a prezentaci projektů.  
 * **Hodnocení:**  
@@ -31,13 +31,13 @@ Po absolvování kurzu byste měli být schopni samostatně navrhnout a implemen
     * E: > 50 bodů
 * **Materiály:** Veškeré podklady, zadání a příklady budou dostupné v tomto GitHub repozitáři.
 
-## **3\. Harmonogram předmětu**
+## **3. Harmonogram předmětu**
 
 Aktuální a detailní plán výuky je dostupný online v [**této tabulce**](https://docs.google.com/spreadsheets/d/1F9X9y3-JuW-Zs4RoUwL-ehhlAPP2YMKr1AgtnVKkm-8/edit?usp=sharing).
 
 *Poznámka: Harmonogram je orientační a může dojít k drobným úpravám v průběhu semestru.*
 
-## **4\. Úvod do C++ a Pythonu**
+## **4. Úvod do C++ a Pythonu**
 
 ### **Proč zrovna tyto dva jazyky?**
 
@@ -73,7 +73,7 @@ int main() {
 print('Hello, Python world!')
 ```
 
-## **5\. Nástroje a prostředí**
+## **5. Nástroje a prostředí**
 
 Pro tento kurz budeme používat moderní a standardní nástroje, které vám usnadní práci a připraví vás na praxi.
 
@@ -91,13 +91,13 @@ Celý repozitář je připraven jako **Dev Container**. To znamená, že nemusí
 1. **Otevřete složku projektu ve VS Code.**  
 2. VS Code automaticky detekuje konfiguraci a v pravém dolním rohu zobrazí notifikaci s tlačítkem **"Reopen in Container"**. Klikněte na něj.  
 3. Počkejte, až se kontejner sestaví a spustí. VS Code se k němu automaticky připojí.  
-4. Nyní můžete otevřít terminál přímo ve VS Code (Terminal \-\> New Terminal). Tento terminál již běží uvnitř kontejneru a máte v něm k dispozici kompilátor pro C++ (g++), interpret Pythonu (python3) a všechny ostatní potřebné nástroje.
+4. Nyní můžete otevřít terminál přímo ve VS Code (Terminal -> New Terminal). Tento terminál již běží uvnitř kontejneru a máte v něm k dispozici kompilátor pro C++ (g++), interpret Pythonu (python3) a všechny ostatní potřebné nástroje.
 
-## **6\. Motivační příklad**
+## **6. Motivační příklad**
 
 Abychom viděli rozdíly mezi jazyky v praxi, podívejte se na jednoduchý [**motivační příklad**](./motivacni-priklad/README.md), který řeší stejnou úlohu (načtení a součet čísel ze souboru) jednou v C++ a jednou v Pythonu.
 
-## **7\. Co dál?**
+## **7. Co dál?**
 
 * **Test znalostí:** Prosím, vyplňte krátký [úvodní test znalostí](https://forms.gle/tdazKRPRFetKRVc46). Je anonymní a slouží pouze pro mou představu o vašich dosavadních zkušenostech.  
 * **Nastavení prostředí:** Ujistěte se, že máte nainstalovaný Docker a VS Code s rozšířením "Dev Containers".  
