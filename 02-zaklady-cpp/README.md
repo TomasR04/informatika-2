@@ -12,6 +12,7 @@ Vítejte v sekci věnované základům programovacího jazyka C++. Postupně si 
 | 04 | [Cykly](./04-cykly/README.md) | Cykly umoňující opakování operací |
 | 05 | [Funkce](./05-funkce/README.md) | Jak organizovat kód do znovupoužitelných bloků. |
 | 06 | [Pole a řetězce](./06-pole-a-retezce/README.md) | Práce s kolekcemi dat. |
+| 07 | [Prace se soubory](./07-prace-se-soubory/README.md) | Práce se soubory. |
 
 ## Jak pracovat s příklady
 
