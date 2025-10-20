@@ -1,6 +1,6 @@
 # 02 - Základy C++
 
-Vítejte v sekci věnované základům programovacího jazyka C++. Postupně si projdeme klíčové koncepty, které jsou nezbytné pro další programování.
+Tato sekce se věnuje základům programovacího jazyka C++. Postupně si projdeme klíčové koncepty, které jsou nezbytné pro další programování.
 
 ## Témata
 
