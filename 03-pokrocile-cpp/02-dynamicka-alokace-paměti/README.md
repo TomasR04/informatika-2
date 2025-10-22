@@ -4,7 +4,7 @@ Dosud jsme pracovali s proměnnými a poli, jejichž velikost byla pevně daná 
 
 ## **Zásobník (Stack)**
 
-* **Co to je:** Oblast paměti, která funguje na principu LIFO (Last-In, First-Out) – jako hromádka talířů. Když zavoláte funkci, na vrchol zásobníku se "položí" její data (lokální proměnné, parametry, návratová adresa). Když funkce skončí, její data se ze zásobníku "odstraní".
+* **Co to je:** Oblast paměti, která funguje na principu LIFO (Last-In, First-Out) – jako zásobník ve zbrani. Když zavoláte funkci, na vrchol zásobníku se "položí" její data (lokální proměnné, parametry, návratová adresa). Když funkce skončí, její data se ze zásobníku "odstraní".
 * **Použití:** Lokální proměnné (deklarované uvnitř funkcí nebo bloků `{}`), parametry funkcí.
 * **Správa:** **Automatická.** Kompilátor přesně ví, kdy proměnná vzniká a kdy zaniká, a zařídí uvolnění paměti.
 * **Rychlost:** Alokace a dealokace je **velmi rychlá** (jde v podstatě jen o posun ukazatele na vrchol zásobníku).
@@ -29,7 +29,7 @@ Dosud jsme pracovali s proměnnými a poli, jejichž velikost byla pevně daná 
     ```cpp
     int* pDynamickeCislo = new int; // Alokuje místo pro int na haldě
     // ... práce s *pDynamickeCislo ...
-    delete pDynamickeCislo;        // Manuální uvolnění paměti
+    delete pDynamickeCislo;         // Manuální uvolnění paměti
     ```
 
 ## **Operátory `new` a `delete`**
@@ -80,6 +80,85 @@ pPole = nullptr;
   * **Nikdy** nepoužívejte `delete` na stejnou paměť dvakrát.
   * **Nikdy** nepoužívejte paměť *po* jejím uvolnění (`delete`).
 
+-----
+
+## **Dynamická alokace 2D polí**
+
+Alokace 2D pole (matice) na haldě, kde oba rozměry (`radky`, `sloupce`) mohou být proměnné, je o něco složitější. Nelze jednoduše napsat `new int[radky][sloupce]`.
+
+Běžný přístup je vytvořit **"pole ukazatelů na pole"**:
+
+1.  Alokujeme jedno pole ukazatelů (hlavní "sloupec", který bude držet řádky).
+2.  Pro každý prvek v tomto poli ukazatelů alokujeme samostatné pole (vlastní řádek).
+
+Výsledkem je ukazatel na ukazatel (např. `int**`).
+
+### **Alokace 2D pole**
+
+Představme si, že chceme matici `radky` x `sloupce`.
+
+```cpp
+int radky = 3;
+int sloupce = 4;
+int** pPole2D = nullptr;
+
+// 1. Alokujeme pole ukazatelů (jeden ukazatel pro každý řádek)
+// pPole2D bude typu 'ukazatel na (ukazatel na int)'
+pPole2D = new int*[radky]; 
+
+// 2. V cyklu alokujeme každý jednotlivý řádek
+for (int i = 0; i < radky; ++i) {
+    // pPole2D[i] je typu 'ukazatel na int'
+    pPole2D[i] = new int[sloupce];
+}
+
+// Nyní můžeme s polem normálně pracovat pomocí [i][j]
+pPole2D[1][2] = 42; 
+```
+
+### **Uvolnění 2D pole**
+
+Uvolnění paměti **musí proběhnout v přesně opačném pořadí** než alokace:
+
+1.  Uvolníme každý jednotlivý řádek (pole `int`ů).
+2.  Uvolníme pole ukazatelů (pole `int*`).
+
+```cpp
+// 1. Uvolníme paměť pro každý řádek
+for (int i = 0; i < radky; ++i) {
+    delete[] pPole2D[i];
+    pPole2D[i] = nullptr; // Dobrá praxe
+}
+
+// 2. Uvolníme paměť pro pole ukazatelů
+delete[] pPole2D;
+pPole2D = nullptr; // Dobrá praxe
+```
+
+**Pozor:** Pokud bychom nejprve uvolnili `pPole2D`, ztratili bychom ukazatele na jednotlivé řádky a došlo by k úniku paměti!
+
+### **Alternativa: Souvislý (kontinuální) blok**
+
+Efektivnější (rychlejší přístup, jednodušší správa) je alokovat 2D pole jako jeden velký 1D blok paměti o velikosti `radky * sloupce` a poté k prvkům přistupovat pomocí matematiky.
+
+```cpp
+int radky = 3;
+int sloupce = 4;
+int* pPoleKont = new int[radky * sloupce];
+
+// Přístup k prvku [i][j] se simuluje jako:
+// pPoleKont[ i * POCET_SLOUPCU + j ]
+pPoleKont[1 * sloupce + 2] = 42; // Ekvivalent pPoleKont[1][2]
+
+// Uvolnění je pak velmi jednoduché:
+delete[] pPoleKont;
+pPoleKont = nullptr;
+```
+
+Tento přístup je sice méně intuitivní na zápis, ale má pouze jednu alokaci a jednu dealokaci, což je robustnější.
+
+-----
+
 ## **Úniky paměti (Memory Leaks)**
 
 Pokud alokujeme paměť pomocí `new` a **zapomeneme** ji uvolnit pomocí `delete`/`delete[]`, tato paměť zůstane obsazená, i když k ní už nemáme přístup (např. ztratíme ukazatel). Tomuto se říká **únik paměti (memory leak)**.
@@ -105,3 +184,4 @@ int main() {
 
   * **Disciplína:** Vždy párovat `new` s `delete` / `new[]` s `delete[]`.
   * **RAII (Resource Acquisition Is Initialization):** Moderní C++ technika, kde se o správu zdroje (např. paměti) stará objekt (třída). Zdroj se alokuje v konstruktoru a automaticky uvolňuje v destruktoru. Toto je princip **chytrých ukazatelů** (`std::unique_ptr`, `std::shared_ptr`), které jsou preferovaným způsobem správy dynamické paměti v moderním C++. *(Zmíníme se o nich později)*.
+
