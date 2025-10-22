@@ -56,22 +56,22 @@ int main() {
         return 1;
     }
 
-    int current_row = 0;
+    int soucasny_radek = 0;
     while (std::getline(soubor_2_p, b_radek)) {
         if (!b_radek.empty()) {
             // Alokujeme paměť pro aktuální řádek
-            mapa[current_row] = new char[pocet_sloupcu];
+            mapa[soucasny_radek] = new char[pocet_sloupcu];
             
             // Zkopírujeme znaky z bufferu do našeho dynamického pole
             for (int j = 0; j < pocet_sloupcu; ++j) {
                 // Musíme ošetřit případ, že by řádek byl kratší (i když by neměl být)
                 if (j < b_radek.length()) {
-                    mapa[current_row][j] = b_radek[j];
+                    mapa[soucasny_radek][j] = b_radek[j];
                 } else {
-                    mapa[current_row][j] = ' '; // Pojistka
+                    mapa[soucasny_radek][j] = ' '; // Pojistka
                 }
             }
-            current_row++;
+            soucasny_radek++;
         }
     }
     soubor_2_p.close();
@@ -126,7 +126,7 @@ int main() {
 
     std::cout << "Vysledky jednotlivych variant:" << std::endl;
     for (int i = 0; i < pocet_variant; ++i) {
-        std::cout << "Varianta 'right " << varianty[i][0] <<", down" << varianty[i][1] << "': " << vysledky[i] << std::endl;
+        std::cout << "Varianta 'right " << varianty[i][0] <<", down " << varianty[i][1] << "': " << vysledky[i] << std::endl;
     }   
     std::cout << "Celkovy soucin stromu: " << soucin << std::endl;
 
