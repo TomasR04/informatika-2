@@ -4,6 +4,8 @@ Ukazatele jsou jedním z nejsilnějších a zároveň nejobávanějších koncep
 
 Můžeme si je představit jako adresu v adresáři. Místo toho, abychom u sebe nosili celý dům (objekt), nosíme u sebe jen lístek s jeho adresou.
 
+![alt pointer ilustration](https://hackingcpp.com/cpp/lang/pointers1.svg)
+
 ## **Proč používat ukazatele?**
 
 1.  **Dynamická alokace paměti:** Umožňují nám vytvářet proměnné a pole za běhu programu, jejichž velikost nemusíme znát při kompilaci (viz `new` a `delete`).
@@ -34,13 +36,15 @@ char* pZnak;     // Ukazatel na znak
 Tento operátor vrátí paměťovou adresu existující proměnné.
 
 ```cpp
-int vek = 30;
-int* pVek;
+char c = 65;
+char* p;
 
-pVek = &vek; // Do ukazatele 'pVek' ulož adresu proměnné 'vek'
+p = &c; // Do ukazatele 'p' ulož adresu proměnné 'c'
 ```
 
-Nyní `pVek` "ukazuje" na `vek`.
+Nyní `p` "ukazuje" na `c`.
+
+![alt pointer ilustration](https://hackingcpp.com/cpp/lang/pointer1.svg)
 
 ### **3. Operátor dereference (`*`)**
 
@@ -49,17 +53,20 @@ Tento operátor nám umožňuje "jít na adresu" uloženou v ukazateli a přeč�
 *Ano, hvězdička se používá pro deklaraci i dereferenci. Kompilátor pozná rozdíl podle kontextu.*
 
 ```cpp
-int vek = 30;
-int* pVek = &vek;
+char c = 88; // hodnota 88 - 'X'
+char* p;
 
 // Čtení hodnoty
-int hodnota = *pVek; // hodnota bude 30
-std::cout << *pVek;  // Vypíše 30
+char x = *pVek; // hodnota bude 88 - 'X'
+std::cout << *x;  // Vypíše X
 
 // Zápis hodnoty
-*pVek = 31;          // Na adresu uloženou v 'pVek' zapiš hodnotu 31
-std::cout << vek;    // Vypíše 31 (změnili jsme 'vek' nepřímo!)
+*p = 89;          // Na adresu uloženou v 'p' zapiš hodnotu 89 - 'Y'
+std::cout << c;    // Vypíše Y (změnili jsme 'c' nepřímo!)
 ```
+
+![alt pointer ilustration](https://hackingcpp.com/cpp/lang/pointer2.svg)
+
 
 -----
 
