@@ -16,11 +16,11 @@ Nakonec se podíváme na moderní prvky C++, jako jsou šablony, výjimky a stan
 | 02 | [Dynamická alokace paměti](./02-dynamicka-alokace-pameti/) | Stack vs. Heap, operátory `new` a `delete`/`delete[]`, alokace polí, úniky paměti (memory leaks). |
 | 03 | [Ukazatele a funkce](./03-ukazatele-a-funkce/) | Rozdíl pass-by-value vs. pass-by-pointer, předávání polí (array decay), návrat ukazatele z funkce (včetně rizik). |
 | 04 | [Dynamické datové struktury](./04-dynamicke-datove-sturktury/) | Úvod do spojových seznamů (implementace uzlu, vkládání, mazání, procházení). |
-| 05 | `Úvod do OOP` | Principy (zapouzdření, dědičnost, polymorfismus), třídy a objekty. |
-| 06 | `Konstruktory a destruktory` | Role konstruktoru, typy (defaultní, parametrický), přetěžování, destruktor. |
-| 07 | `Dědičnost` | Odvozené třídy, překrývání metod, viditelnost (public, private, protected). |
-| 08 | `Polymorfismus` | Virtuální metody, abstraktní třídy, dynamické vázání. |
-| 09 | `Přetěžování operátorů` | Přetížení aritmetických, relačních a dalších operátorů pro vlastní třídy. |
+| 05 | [Úvod do OOP](./05-uvod-do-oop/) | Principy (zapouzdření, dědičnost, polymorfismus), třídy a objekty. |
+| 06 | [Konstruktory a destruktory](./06-konstruktory-a-destruktory/) | Role konstruktoru, typy (defaultní, parametrický), přetěžování, destruktor. |
+| 07 | [Dědičnost](./07-dedicnost/) | Odvozené třídy, překrývání metod, viditelnost (public, private, protected). |
+| 08 | [Polymorfismus](./08-polymorfismus/) | Virtuální metody, abstraktní třídy, dynamické vázání. |
+| 09 | [Přetěžování operátorů](./09-pretezovani-operatoru/) | Přetížení aritmetických, relačních a dalších operátorů pro vlastní třídy. |
 | 10 | `Šablony (Templates)` | Funkční šablony, třídní šablony, obecné programování. |
 | 11 | `Statické členy` | Statické atributy a metody, jejich využití. |
 | 12 | `Výjimky (Exceptions)` | Zpracování chyb pomocí `try`, `catch` a `throw`. |

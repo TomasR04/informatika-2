@@ -8,6 +8,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+            	"ms-vsliveshare.vsliveshare",
 				"eamodio.gitlens",
 				"ms-vscode.cpptools-extension-pack",
 				"ms-python.vscode-pylance",
@@ -24,7 +25,7 @@
 	// 	}
 	// },
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [5990],
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "apt-get update && apt-get install -y g++ && python3 -m pip install --upgrade pip &&  apt-get install -y libgtest-dev",
 	// Configure tool-specific properties.

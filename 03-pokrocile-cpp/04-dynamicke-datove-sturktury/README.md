@@ -18,7 +18,7 @@ Seznam jako celek si pak pamatuje pouze **ukazatel na první uzel (hlavu - head)
 
 ```
 
-[ Head ] ---\> [ Uzel 1 | Data: 10 | Next ] ---\> [ Uzel 2 | Data: 20 | Next ] ---\> [ Uzel 3 | Data: 30 | Next: nullptr ]
+[ Head ] ---> [ Uzel 1 | Data: 10 | Next ] ---> [ Uzel 2 | Data: 20 | Next ] ---> [ Uzel 3 | Data: 30 | Next: nullptr ]
 
 ```
 
