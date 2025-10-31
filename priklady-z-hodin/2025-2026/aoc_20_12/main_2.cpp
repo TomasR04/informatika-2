@@ -7,10 +7,13 @@ private:
     int x = 10;
     int y = 1;
 public:
-    void vypis_pozici()
-    {
-        std::cout << "Pozice x: " << x << ", pozice y: " << y << std::endl;
-    }
+    friend std::ostream& operator<<(std::ostream& os, const Waypoint& w);
+    Waypoint operator+(Waypoint smer){
+        Waypoint result;
+        result.x= this->x+smer.x;
+        result.y = this->y+smer.y;
+        return result;
+    };
     void posun_smerem(char smer, int kroky)
     {
         switch (smer)
@@ -59,6 +62,11 @@ public:
         return y;
     }
 };
+
+std::ostream& operator<<(std::ostream& os, const Waypoint& w) {
+    os << "Waypoint(" << w.x << ", " << w.y << ")";
+    return os; 
+}
 
 class Lod
 {
@@ -113,8 +121,7 @@ public:
     }
     void vypis_pozici()
     {
-        std::cout << "Pozice x: " << x << ", pozice y: " << y << ", manhatnovska vzdalenost: " << abs(x) + abs(y) << std::endl;\
-        smer.vypis_pozici();
+        std::cout << "Pozice x: " << x << ", pozice y: " << y <<", info o waypointu: " << smer<<", manhatnovska vzdalenost: " << abs(x) + abs(y) << std::endl;\
     }
 };
 
@@ -123,6 +130,13 @@ int main()
     Lod lod("test.txt");
     lod.vypis_pozici();
     lod.navigace();
+    // Waypoint w1;
+    // Waypoint w2;
+    // Waypoint r = w1 + w2;
+    // std::cout<< r <<std::endl;
+    // r=w1.operator+(w2);
+    // r.vypis_pozici();
+
     
     return 0;
 }
