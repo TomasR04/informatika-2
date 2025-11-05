@@ -21,7 +21,7 @@ LinkedList::LinkedList(const std::string &filename)
         {
             if (radek.find("#") != 0 || radek.empty())
             {
-                pridejStudentaNaKonec(parsujRadek(radek));
+                pridejStudentaNaKonec(Student(radek));
             }
         }
     }
@@ -106,21 +106,4 @@ void LinkedList::ulozStudentyDoSouboru()
         current = current->get_next();
     }
     file.close();
-}
-
-Student LinkedList::parsujRadek(const std::string &radek)
-{
-    Student s;
-    std::stringstream ss(radek);
-    std::string idStr, nameStr, prumerStr;
-
-    std::getline(ss, idStr, ',');
-    std::getline(ss, nameStr, ',');
-    std::getline(ss, prumerStr, ',');
-
-    s.id = stoi(idStr);
-    s.name = nameStr;
-    s.prumer = stod(prumerStr);
-
-    return s;
 }

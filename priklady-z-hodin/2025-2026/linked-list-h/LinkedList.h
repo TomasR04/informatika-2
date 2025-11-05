@@ -8,8 +8,6 @@ class LinkedList{
 private:
     Node **pHead;
     std::string filename;
-
-    Student parsujRadek(const std::string &radek);
     void ulozStudentyDoSouboru();
 
 public:

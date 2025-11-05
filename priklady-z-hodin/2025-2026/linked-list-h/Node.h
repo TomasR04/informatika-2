@@ -1,14 +1,8 @@
 #pragma once
 
 #include <string>
+#include "Student.h"
 
-// definuje strukturu Student
-struct Student
-{
-    int id;
-    std::string name;
-    double prumer;
-};
 // definuje strukturu Node
 
 class Node{
