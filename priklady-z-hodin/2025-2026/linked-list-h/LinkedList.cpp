@@ -100,10 +100,20 @@ void LinkedList::ulozStudentyDoSouboru()
     Node *current = *pHead;
     while (current != nullptr)
     {
-        file << current->get_student().id << ","
-             << current->get_student().name << ","
-             << current->get_student().prumer << std::endl;
+        file << *current<< std::endl;
         current = current->get_next();
     }
     file.close();
+}
+
+std::ostream& operator<<(std::ostream& out, LinkedList& m)
+{
+	Node *current = *m.pHead;
+    while (current != nullptr)
+    {
+        // out<<"Adresa prvku: "<<current<<", "<<*current;
+        out<<*current;
+        current = current->get_next();
+    }
+	return out;
 }

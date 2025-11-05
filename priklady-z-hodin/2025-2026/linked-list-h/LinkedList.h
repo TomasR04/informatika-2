@@ -16,4 +16,5 @@ public:
     void pridejStudentaNaKonec(Student new_Student);
     // void setridSeznamPodlePrumeru();
     ~LinkedList();
+    friend std::ostream& operator<<(std::ostream& out, LinkedList& m);
 };

@@ -24,7 +24,13 @@ void Node::set_next(Node* next){
 }
 
 void Node::vypis_node(){
-    std::cout << student.id << std::setw(5) << student.name << std::setw(5) << student.prumer << '\n';
+    std::cout << student <<std::endl;
+}
+
+std::ostream& operator<<(std::ostream& out, Node& m){
+    out<<m.student;
+    // out<<"Student: "<<m.student<< ", Adresa následujícího: "<< m.next <<std::endl;
+    return out;
 }
 
 // Node *operator[](int index)
