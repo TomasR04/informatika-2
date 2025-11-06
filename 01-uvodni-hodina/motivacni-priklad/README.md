@@ -93,14 +93,14 @@ Nejjednodušší způsob je přímo ve VS Code:
 
 Alternativně můžete použít terminál:
 
-```shell
+```bash
 g++ day1.cpp -o day1_cpp
 ./day1_cpp
 ```
 
 **Výstup:**
 
-```shell
+```bash
 Celkovy soucet v C++ je: 142
 ```
 
@@ -143,13 +143,13 @@ Nejjednodušší způsob je přímo ve VS Code:
 
 Alternativně můžete použít terminál:
 
-```shell
+```bash
 python3 day1.py
 ```
 
 **Výstup:**
 
-```shell
+```bash
 Celkovy soucet v Pythonu je: 142
 ```
 
