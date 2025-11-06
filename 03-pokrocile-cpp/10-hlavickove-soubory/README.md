@@ -1,4 +1,4 @@
-# **10 - Hlavičkové soubory (.h) a Implementační soubory (.cpp)**
+# **10 - Hlavičkové soubory (`.h`) a Implementační soubory (`.cpp`)**
 
 Jakmile programy začnou být větší, je neudržitelné mít veškerý kód v jednom `main.cpp` souboru. Kód potřebujeme rozdělit do logických celků, což v C++ děláme pomocí dvou typů souborů:
 
