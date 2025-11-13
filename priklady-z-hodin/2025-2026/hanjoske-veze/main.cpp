@@ -10,14 +10,13 @@ void vyresHanoi(int n,
                 std::stack<int>& pomocna_vez,
                 const std::string& zdrojova_vez_nazev, 
                 const std::string& cilova_vez_nazev, 
-                const std::string& pomocna_vez_nazev,
-                const int pocet_disku) 
+                const std::string& pomocna_vez_nazev) 
 {
     if (n == 0) {
         return;
     }
 
-    vyresHanoi(n - 1, zdrojova_vez, pomocna_vez, cilova_vez, zdrojova_vez_nazev, pomocna_vez_nazev, cilova_vez_nazev, pocet_disku);
+    vyresHanoi(n - 1, zdrojova_vez, pomocna_vez, cilova_vez, zdrojova_vez_nazev, pomocna_vez_nazev, cilova_vez_nazev);
     
     int disk = zdrojova_vez.top();
     zdrojova_vez.pop();
@@ -25,7 +24,7 @@ void vyresHanoi(int n,
 
     std::cout << "Přesun disku " << disk << " z věže " << zdrojova_vez_nazev << " na věž " << cilova_vez_nazev << "\n";
 
-    vyresHanoi(n - 1, pomocna_vez, cilova_vez, zdrojova_vez, pomocna_vez_nazev, cilova_vez_nazev, zdrojova_vez_nazev, pocet_disku);
+    vyresHanoi(n - 1, pomocna_vez, cilova_vez, zdrojova_vez, pomocna_vez_nazev, cilova_vez_nazev, zdrojova_vez_nazev);
 }
 
 
@@ -42,7 +41,7 @@ int main() {
 
     std::cout << "Řešení Hanojských věží pro " << pocet_disku << " disků:\n\n";
 
-    vyresHanoi(pocet_disku, vezA, vezC, vezB, "A", "C", "B", pocet_disku);
+    vyresHanoi(pocet_disku, vezA, vezC, vezB, "A", "C", "B");
 
     std::cout << "Přesun dokončen.\n";
 

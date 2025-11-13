@@ -28,7 +28,7 @@ C++ `std::regex` standardně používá syntaxi **ECMAScript** (stejnou jako Jav
 | `[]` | Sada znaků. Shoduje se s jedním znakem ze sady. | `[aeiou]` odpovídá jakékoli samohlásce |
 | `[^]` | Negovaná sada. Shoduje se s jedním znakem, který není v sadě. | `[^0-9]` odpovídá všemu, co není číslice |
 | `( )` | **Zachytávací skupina (Capturing Group).** Uloží část shody pro pozdější použití. | `(ahoj)` |
-| `|` | Logické NEBO (OR). | `(com|org|net)` |
+| `\|` | Logické NEBO (OR). | `(com\|org\|net)` |
 | `^` | Začátek řetězce. | `^Start` (musí začínat na "Start") |
 | `$` | Konec řetězce. | `end$` (musí končit na "end") |
 
@@ -39,6 +39,30 @@ Protože zpětné lomítko (`\`) je v C++ řetězcích samo o sobě *escape* zna
   * Regex pro číslici `\d` se v C++ stringu zapíše jako `"\\d"`.
   * Regex pro cestu `C:\Temp` se zapíše jako `"C:\\\\Temp"`.
   * Regex pro `(com|org)` se zapíše jako `"(com\\|org)"`.
+
+##### Raw stringy (C++11)
+
+C++11 zavedlo **raw stringy**, které řeší problém se zpětnými lomítky. Raw string se zapisuje jako `R"(obsah)"`. V raw stringu se zpětná lomítka interpretují doslova, bez escapování:
+
+  * Místo `"\\d"` stačí napsat `R"(\d)"`
+  * Místo `"C:\\\\Temp"` stačí napsat `R"(C:\Temp)"`
+  * Místo `"(com\\|org)"` stačí napsat `R"((com|org))"`
+
+Příklad:
+```cpp
+// Bez raw stringu - obtížné na čtení
+std::regex vzor1("\\d{3}-\\d{3}-\\d{3}");
+
+// S raw stringem - jasněji viditelný regex
+std::regex vzor2(R"(\d{3}-\d{3}-\d{3})");
+```
+
+Oba způsoby jsou funkčně ekvivalentní, ale raw stringy jsou **čitelnější** a méně náchylné k chybám. Pokud máte ve stringu výraz `)"`, můžete změnit separator: `R"delim(obsah)delim"`.
+
+```cpp
+// Raw string s vlastním separátorem (máme )" v obsahu)
+std::regex vzor(R"delim(pattern)"here)delim");
+```
 
 
 ### Klíčové komponenty v `<regex>`
@@ -67,7 +91,7 @@ Používá se, když chcete ověřit, že *celý* vstup odpovídá formátu.
 
 ```cpp
 std::string email = "jmeno.prijmeni@email.cz";
-std::regex email_vzor("[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}");
+std::regex email_vzor(R"([\w.-]+@[\w.-]+\.[a-zA-Z]{2,})");
 
 if (std::regex_match(email, email_vzor)) {
     std::cout << "Email je platny." << std::endl;
@@ -80,7 +104,7 @@ Používá se k nalezení části textu a "vytažení" konkrétních informací 
 
 ```cpp
 std::string text = "ID: 42, Jmeno: Jan Novak";
-std::regex vzor("ID: (\\d+), Jmeno: (\\w+) (\\w+)");
+std::regex vzor(R"(ID: (\d+), Jmeno: (\w+) (\w+))");
 std::smatch shody;
 
 if (std::regex_search(text, shody, vzor)) {
@@ -103,7 +127,7 @@ Používá se k nalezení všech shod a jejich nahrazení.
 
 ```cpp
 std::string text = "Telefon je 123-456-789. Volejte 987-654-321.";
-std::regex vzor_telefon("\\d{3}-\\d{3}-\\d{3}");
+std::regex vzor_telefon(R"(\d{3}-\d{3}-\d{3})");
 std::string format = "[REDACTED]";
 
 std::string vysledek = std::regex_replace(text, vzor_telefon, format);
@@ -116,7 +140,7 @@ std::string vysledek = std::regex_replace(text, vzor_telefon, format);
 
 ```cpp
 std::string vstup = "Barvy: red, green, blue";
-std::regex vzor_barva("(\\w+)"); // Najde všechna slova
+std::regex vzor_barva(R"((\w+))"); // Najde všechna slova
 std::smatch shody;
 std::string::const_iterator startHledani(vstup.cbegin());
 
