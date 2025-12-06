@@ -48,12 +48,17 @@ Jupyter Notebooky umožňují spouštět kód po částech (buňkách) a vidět 
 4. [Dědičnost](./04-dedicnost/)  
 5. [Abstraktní třídy a Polymorfismus](./05-abstraktni-tridy/)  
 6. [Magické metody](./06-magicke-metody/)
+7. [Moduly a balíčky](./07-moduly-a-balicky/)
+8. [Dekorátory](./08-dekoratory/)  
+9. [Výjimky a Error Handling](./09-vyjimky/) 
+10. [Logování](./10-logovani/)   
+11. [Argumenty příkazové řádky (CLI)](./11-argumenty-prikazove-radky/) 
+12. [Virtuální prostředí a správa balíčků](./12-prostredi-a-balicky/) 
+13. [Generatory a Iteratory](./13-generatory-a-iteratory/)
 
-<!-- ### **Pokročilé techniky a nástroje**
-
-6. [Type Hinting (Typové anotace)](./06-typing/)  
-7. [Dekorátory](./07-dekoratory/)  
-8. [Výjimky a Error Handling](./08-vyjimky/)  
-9. [Logování](./09-logovani/)  
-10. [Argumenty příkazové řádky (CLI)](./10-argumenty-prikazove-radky/)  
-11. [Virtuální prostředí a správa balíčků](./11-prostredi-a-balicky/) -->
+<!-- 14. [Vložený kód (Rozšíření v C++)](./14-vlozeny-kod/)  
+15. [Vlákna (Threading)](./15-vlakna/)  
+16. [Asynchronní programování (AsyncIO)](./16-asynchronni-programovani/)  
+17. [Multiprocessing (Více procesů)](./17-multiprocessing/)  
+18. [Sdílení paměti](./18-sdileni-pameti/)  
+19. [Sockety a Síťová komunikace](./19-sockety/) -->
