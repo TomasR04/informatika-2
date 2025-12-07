@@ -1,4 +1,4 @@
-# **11 - Argumenty příkazové řádky (CLI)**
+# **12 - Argumenty příkazové řádky (CLI)**
 
 Profesionální skripty a nástroje se málokdy ovládají úpravou zdrojového kódu nepo přes `input()`. Místo toho je ovládáme pomocí **argumentů** při spouštění z terminálu.
 

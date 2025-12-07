@@ -1,4 +1,4 @@
-# **13 - Generátory a Iterátory**
+# **14 - Generátory a Iterátory**
 
 V Pythonu je cyklus `for` velmi mocný. Můžeme iterovat přes seznamy, n-tice, slovníky, řetězce nebo soubory. Všechny tyto objekty jsou tzv. **Iterable**.
 

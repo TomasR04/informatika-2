@@ -1,4 +1,4 @@
-# **12 - Virtuální prostředí a správa balíčků**
+# **13 - Virtuální prostředí a správa balíčků**
 
 Při práci na více projektech narazíte na problém zvaný **"Dependency Hell"** (Peklo závislostí).
 
