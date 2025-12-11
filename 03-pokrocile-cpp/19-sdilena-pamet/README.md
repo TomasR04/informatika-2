@@ -1,4 +1,4 @@
-# **20 - Sdílená paměť (Shared Memory)**
+# **19 - Sdílená paměť (Shared Memory)**
 
 ## **1. Teoretický úvod: Jak funguje paměť procesu?**
 

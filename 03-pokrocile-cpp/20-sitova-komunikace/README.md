@@ -1,11 +1,11 @@
-# **19 - Síťová komunikace (Sockets)**
+# **20 - Síťová komunikace (Sockets)**
 
 Programování sítě nám umožňuje propojit aplikace běžící na různých počítačích (nebo různých procesech).  
 V C++ používáme nízkoúrovňové rozhraní zvané Berkeley Sockets (nebo Winsock na Windows).
 
 ## **1. Základní pojmy**
 
-### **Socket (Zásuvka)**
+### **Socket**
 
 Představte si Socket jako **dveře**, kterými data odcházejí z vašeho programu do sítě a přicházejí zpět.
 
@@ -26,7 +26,7 @@ Počítače ukládají čísla v paměti různě:
 * **Little-Endian (Intel/AMD x86):** Nejméně významný bajt první.  
 * **Big-Endian (Síťový standard):** Nejvíce významný bajt první.
 
-Pokud pošlete číslo 1000 (binárně 00000011 11101000) z Intel počítače do sítě bez úpravy, dorazí pozpátku! Proto musíme používat konverzní funkce:
+Pokud pošlete číslo `1000` (binárně `00000011 11101000`) z Intel počítače do sítě bez úpravy, dorazí pozpátku! Proto musíme používat konverzní funkce:
 
 * `htons()` (Host to Network Short) – pro porty.  
 * `htonl()` (Host to Network Long) – pro IP adresy.
